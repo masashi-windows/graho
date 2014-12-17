@@ -2,9 +2,9 @@ Graho
 =====
 
 **This iOS App is in development.**
-**Please waite a minutes.**
+**Please waite a second.**
 
-The Graho is an iOS App. Graho is a suppot tool for making a weekly report.
+The Graho is an iOS App. Graho is a support tool for making a weekly report.
 
 **Grahoはまだ開発中です。**
 
