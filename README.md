@@ -4,7 +4,7 @@ Graho
 **This iOS App is in development.**
 **Please waite a minutes.**
 
-The Graho is an iOS App. Graho is suppot tool for making a weekly report.
+The Graho is an iOS App. Graho is a suppot tool for making a weekly report.
 
 **Grahoはまだ開発中です。**
 
