@@ -14,4 +14,4 @@ Grahoは週報を作成するiOSアプリです。
 
 来年の頭にはストアにアップしたい。
 
-![Graho](http://keepingblog.net/github_images/Graho_images/graho_readme180.png)
+![Graho](http://keepingblog.net/github_images/Graho_images/graho_readme_clear180.png)
