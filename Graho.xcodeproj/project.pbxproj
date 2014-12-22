@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187438E31A488A9B00114315 /* EditSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187438E21A488A9B00114315 /* EditSettingViewController.m */; };
 		188E27F11A3D7CEB00DAE3FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F01A3D7CEB00DAE3FD /* Foundation.framework */; };
 		188E27F31A3D7CEB00DAE3FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F21A3D7CEB00DAE3FD /* CoreGraphics.framework */; };
 		188E27F51A3D7CEB00DAE3FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F41A3D7CEB00DAE3FD /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		187438E11A488A9B00114315 /* EditSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSettingViewController.h; sourceTree = "<group>"; };
+		187438E21A488A9B00114315 /* EditSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSettingViewController.m; sourceTree = "<group>"; };
 		188E27ED1A3D7CEB00DAE3FD /* Graho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188E27F01A3D7CEB00DAE3FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		188E27F21A3D7CEB00DAE3FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				188E28061A3D7CEB00DAE3FD /* WeekReportsViewController.m */,
 				188E28251A3D942300DAE3FD /* SettingViewController.h */,
 				188E28261A3D942300DAE3FD /* SettingViewController.m */,
+				187438E11A488A9B00114315 /* EditSettingViewController.h */,
+				187438E21A488A9B00114315 /* EditSettingViewController.m */,
 				188E28281A3D945600DAE3FD /* TaskViewController.h */,
 				188E28291A3D945600DAE3FD /* TaskViewController.m */,
 				188E282B1A3D946C00DAE3FD /* ConditionViewController.h */,
@@ -282,6 +287,7 @@
 				188E27FD1A3D7CEB00DAE3FD /* main.m in Sources */,
 				188E28301A3D947C00DAE3FD /* TimeViewController.m in Sources */,
 				188E28271A3D942300DAE3FD /* SettingViewController.m in Sources */,
+				187438E31A488A9B00114315 /* EditSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

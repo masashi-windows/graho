@@ -139,6 +139,14 @@
     return cell;
 }
 
+#pragma Table view delegate
+
+// 設定項目を選択したら設定入力画面へ
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"settingToEdit" sender:self];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -149,5 +157,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+// 保存ボタンの処理
+- (IBAction)saveToSetting:(UIStoryboardSegue *)sender
+{
+    
+}
 
 @end
