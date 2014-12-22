@@ -1,0 +1,18 @@
+//
+//  main.m
+//  Graho
+//
+//  Created by 須藤 将史 on 2014/12/14.
+//  Copyright (c) 2014年 masashi_sutou. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#import "AppDelegate.h"
+
+int main(int argc, char * argv[])
+{
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
