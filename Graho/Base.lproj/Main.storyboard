@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qgO-MW-JUx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qgO-MW-JUx">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Menu-->
+        <!--Week Reports View Controller - Menu-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Menu" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Menu" id="vXZ-lx-hvc" customClass="WeekReportsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -118,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="-1477" y="274"/>
         </scene>
-        <!--Task-->
+        <!--Task View Controller - Task-->
         <scene sceneID="sVZ-Wp-EZN">
             <objects>
                 <viewController title="Task" id="n65-dp-xnE" customClass="TaskViewController" sceneMemberID="viewController">
@@ -151,7 +150,7 @@
             </objects>
             <point key="canvasLocation" x="-68" y="-600"/>
         </scene>
-        <!--Graph-->
+        <!--Graph View Controller - Graph-->
         <scene sceneID="smZ-ce-Wa9">
             <objects>
                 <viewController title="Graph" id="9j2-h1-ApA" customClass="GraphViewController" sceneMemberID="viewController">
@@ -180,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="-727" y="1169"/>
         </scene>
-        <!--Time-->
+        <!--Time View Controller - Time-->
         <scene sceneID="mtu-tR-2EI">
             <objects>
                 <viewController title="Time" id="PWL-lR-GoU" customClass="TimeViewController" sceneMemberID="viewController">
@@ -199,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="-68" y="904"/>
         </scene>
-        <!--Condition-->
+        <!--Condition View Controller - Condition-->
         <scene sceneID="dkc-3k-0DT">
             <objects>
                 <viewController title="Condition" id="nPG-bN-bjg" customClass="ConditionViewController" sceneMemberID="viewController">
@@ -218,7 +217,7 @@
             </objects>
             <point key="canvasLocation" x="-68" y="176"/>
         </scene>
-        <!--MenuNavi-->
+        <!--Navigation Controller - MenuNavi-->
         <scene sceneID="1Uw-vq-WNN">
             <objects>
                 <navigationController title="MenuNavi" automaticallyAdjustsScrollViewInsets="NO" id="qgO-MW-JUx" sceneMemberID="viewController">
@@ -236,7 +235,7 @@
             </objects>
             <point key="canvasLocation" x="-2038" y="286"/>
         </scene>
-        <!--Setting-->
+        <!--Setting View Controller - Setting-->
         <scene sceneID="m0E-hd-bwG">
             <objects>
                 <viewController title="Setting" automaticallyAdjustsScrollViewInsets="NO" id="f4V-Aa-OuF" customClass="SettingViewController" sceneMemberID="viewController">
@@ -291,7 +290,7 @@
             </objects>
             <point key="canvasLocation" x="-1189" y="-552"/>
         </scene>
-        <!--CreateTab-->
+        <!--Tab Bar Controller - CreateTab-->
         <scene sceneID="nm3-gc-UvA">
             <objects>
                 <tabBarController title="CreateTab" automaticallyAdjustsScrollViewInsets="NO" id="1sz-v7-Nfj" sceneMemberID="viewController">

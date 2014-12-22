@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 masashi_sutou. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WeekReportsViewController.h"
 
-@interface ViewController ()
+@interface WeekReportsViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstWeekReport;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation ViewController
+@implementation WeekReportsViewController
 
 - (void)viewDidLoad
 {
