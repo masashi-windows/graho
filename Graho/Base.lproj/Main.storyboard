@@ -274,6 +274,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HCF-5g-V9c" kind="push" identifier="settingToEdit" id="8IP-qt-bqa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -284,7 +287,6 @@
                     <navigationItem key="navigationItem" title="設定" id="HED-c9-2wL"/>
                     <connections>
                         <outlet property="settingTableView" destination="53d-2e-VNA" id="6Bc-Xu-fPZ"/>
-                        <segue destination="HCF-5g-V9c" kind="push" identifier="settingToEdit" id="nje-Au-WrV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irx-Pe-37V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,7 +329,7 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gXG-UU-4s1" kind="unwind" unwindAction="saveToSetting:" id="CEV-4h-Z6u"/>
+                                    <action selector="saveButton:" destination="HCF-5g-V9c" eventType="touchUpInside" id="mJa-i2-lxR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -352,7 +354,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8H-p7-eD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gXG-UU-4s1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1085" y="-648"/>
         </scene>

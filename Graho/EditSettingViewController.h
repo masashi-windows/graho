@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditSettingViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@interface EditSettingViewController : UIViewController<UITextFieldDelegate>
 
 @end

@@ -9,6 +9,8 @@
 #import "EditSettingViewController.h"
 
 @interface EditSettingViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+- (IBAction)saveButton:(id)sender;
 
 @end
 
@@ -27,12 +29,49 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.textField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+// UITextFieldクラスのデリゲートメソッド
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // キーボードを引っ込める
+    [self.view endEditing:YES];
+    
+    // 文字の出力
+    NSLog(@"入力された文字> %@", self.textField.text);
+    
+    // 改行コードを入力しない
+    return NO;
+}
+
+
+// 保存ボタンの処理
+- (IBAction)saveButton:(id)sender {
+    
+    // アラートを作る
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"確認" message:@"設定を保存しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    
+    //アラートを表示する
+    [alert show];
+}
+
+// アラート処理（デリゲートメソッド）
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1){
+        //　OKが押されたら保存処理
+//        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+//        [ud setObject:self.textField.text forKey:@"KEY_WPNAME"];  // をKEY_WPNAMEというキーの初期値は99
+//        [ud synchronize];  // NSUserDefaultsに即時反映させる（即時で無くてもよい場合は不要）
+    }
 }
 
 /*
