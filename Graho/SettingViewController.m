@@ -158,10 +158,4 @@
 }
 */
 
-// 保存ボタンの処理
-- (IBAction)saveToSetting:(UIStoryboardSegue *)sender
-{
-    
-}
-
 @end
