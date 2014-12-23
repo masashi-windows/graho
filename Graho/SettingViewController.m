@@ -8,12 +8,14 @@
 
 #import "SettingViewController.h"
 
+
 @interface SettingViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 @property (nonatomic, strong) NSArray *dataSourceWork;
 @property (nonatomic, strong) NSArray *dataSourceMail;
+@property (nonatomic, strong) NSArray *settingValues;
 
 @end
 
@@ -39,7 +41,7 @@
     // テーブルに表示したいデータソースをセット
     self.dataSourceWork = @[@"現場名"];
     self.dataSourceMail = @[@"タイトル", @"書き出し文", @"署名"];
-
+    [self load];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,6 +119,13 @@
     // 再利用できるセルがあれば再利用する
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    // 右側にキャプションを追加する
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    
+    // NSUserDefaultsを取得して利用
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    self.settingValues = [ud stringArrayForKey:@"KEY_UNSETTING"];
+    
     if (!cell) {
         // 再利用できない場合は新規で作成
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -127,16 +136,45 @@
         case 0:
             cell.textLabel.text = self.dataSourceWork[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            // セルの左側のキャプション
+            cell.detailTextLabel.text = self.settingValues[indexPath.row];
+            
             break;
         case 1:
             cell.textLabel.text = self.dataSourceMail[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            // セルの左側のキャプション
+            cell.detailTextLabel.text = self.settingValues[indexPath.row];
+            
             break;
         default:
             break;
     }
     
     return cell;
+}
+
+#pragma Table view delegate
+
+// 設定項目を選択したら設定入力画面へ
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"settingToEdit" sender:self];
+}
+
+// 設定データ読み込み
+- (void)load
+{
+    // デフォルト設定
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
+    
+    // KEY_UNSETTINGというキーでデフォルト値を配列に保持
+    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"テスト" ,@"サンプル" ,nil];
+    [defaults setObject:array forKey:@"KEY_UNSETTING"];
+    [ud registerDefaults:defaults];
 }
 
 /*
