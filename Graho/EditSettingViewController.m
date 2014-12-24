@@ -30,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.textField.delegate = self;
+    self.navigationItem.title = self.toTitle;
+    self.textField.text = self.toText;
 }
 
 - (void)didReceiveMemoryWarning

@@ -35,6 +35,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // 日付の書式を作成
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MM'月'"];
+    
+    // WeekReportsViewControllerのタイトルに日付を表示
+    self.navigationItem.title = [dateFormatter stringFromDate:[NSDate date]];
 }
 
 - (void)didReceiveMemoryWarning
