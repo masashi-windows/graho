@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "EditSettingViewController.h"
 
 
 @interface SettingViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -16,6 +17,9 @@
 @property (nonatomic, strong) NSArray *dataSourceWork;
 @property (nonatomic, strong) NSArray *dataSourceMail;
 @property (nonatomic, strong) NSArray *settingValues;
+
+// 選択セルのインデックスを格納する変数
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -53,9 +57,9 @@
 #pragma mark - UITableView DataSource
 
 /**
- テーブルに表示するセクション名を返します。（オプション）
- 
- @return NSString : セクション名
+ * テーブルに表示するセクション名を返します。（オプション）
+ *
+ * @return NSString : セクション名
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -76,9 +80,9 @@
 }
 
 /**
- テーブルに表示するデータ件数を返します。（必須）
- 
- @return NSInteger : データ件数
+ * テーブルに表示するデータ件数を返します。（必須）
+ *
+ * @return NSInteger : データ件数
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -99,9 +103,9 @@
 }
 
 /**
- テーブルに表示するセクション（区切り）の件数を返します。（オプション）
- 
- @return NSInteger : セクションの数
+ * テーブルに表示するセクション（区切り）の件数を返します。（オプション）
+ *
+ * @return NSInteger : セクションの数
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -109,9 +113,9 @@
 }
 
 /**
- テーブルに表示するセルを返します。（必須）
- 
- @return UITableViewCell : テーブルセル
+ * テーブルに表示するセルを返します。（必須）
+ *
+ * @return UITableViewCell : テーブルセル
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -156,15 +160,54 @@
     return cell;
 }
 
-#pragma Table view delegate
-
-// 設定項目を選択したら設定入力画面へ
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+/**
+ * 選択されたセルのインデックスを取得
+ * 設定項目を選択したら設定入力画面へ
+ *
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 選択されたセルのインデックスを格納
+    self.selectedIndexPath = indexPath;
+    
+    // セグエのIDで遷移先を指定
     [self performSegueWithIdentifier:@"settingToEdit" sender:self];
 }
 
-// 設定データ読み込み
+#pragma mark - Segue method
+
+/**
+ *  セグエでの画面遷移前に呼び出されます。
+ *
+ *  @param segue  セグエ（pushを選択したやつ）
+ *  @param sender 呼び出し元のViewController（今回の場合はViewController）
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // 遷移先を取得します
+    EditSettingViewController *editSettingView = segue.destinationViewController;
+    
+    // 選択されたセルの行数を遷移先の「タイトル」「テキストフィールドのテキスト」に表示する。
+    switch (_selectedIndexPath.section) {
+        case 0: // 現場設定
+            editSettingView.toTitle = self.dataSourceWork[self.selectedIndexPath.row];
+            editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
+            break;
+        case 1: // メール設定
+            editSettingView.toTitle = self.dataSourceMail[self.selectedIndexPath.row];
+            editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
+            break;
+        default:
+            break;
+    }
+}
+
+
+#pragma Table view delegate
+
+/**
+ * 設定データ読み込み
+ */
 - (void)load
 {
     // デフォルト設定
@@ -177,9 +220,9 @@
     [ud registerDefaults:defaults];
 }
 
-/*
-#pragma mark - Navigation
 
+#pragma mark - Navigation
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

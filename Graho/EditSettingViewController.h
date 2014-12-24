@@ -10,4 +10,7 @@
 
 @interface EditSettingViewController : UIViewController<UITextFieldDelegate>
 
+@property (nonatomic, copy) NSString *toTitle;
+@property (nonatomic, copy) NSString *toText;
+
 @end

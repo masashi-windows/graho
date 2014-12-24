@@ -38,7 +38,7 @@
     
     // 日付の書式を作成
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"YYYY'年 'MM'月'"];
+    [dateFormatter setDateFormat:@"MM'月'"];
     
     // WeekReportsViewControllerのタイトルに日付を表示
     self.navigationItem.title = [dateFormatter stringFromDate:[NSDate date]];
