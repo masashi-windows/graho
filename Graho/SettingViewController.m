@@ -43,8 +43,8 @@
     self.settingTableView.dataSource = self;
     
     // テーブルに表示したいデータソースをセット
-    self.dataSourceWork = @[@"現場名"];
-    self.dataSourceMail = @[@"タイトル", @"書き出し文", @"署名"];
+    self.dataSourceWork = @[@"現場名", @"言語"];
+    self.dataSourceMail = @[@"件名", @"書き出し文", @"署名"];
     [self load];
 }
 
@@ -71,7 +71,7 @@
             title = [NSString stringWithFormat:@"現場設定"];
             break;
         case 1:
-            title = [NSString stringWithFormat:@"メール設定"];
+            title = [NSString stringWithFormat:@"書式設定"];
             break;
         default:
             break;
@@ -187,13 +187,13 @@
     // 遷移先を取得します
     EditSettingViewController *editSettingView = segue.destinationViewController;
     
-    // 選択されたセルの行数を遷移先の「タイトル」「テキストフィールドのテキスト」に表示する。
+    // 選択されたセルの行数を遷移先の「件名」「テキストフィールドのテキスト」に表示する。
     switch (_selectedIndexPath.section) {
         case 0: // 現場設定
             editSettingView.toTitle = self.dataSourceWork[self.selectedIndexPath.row];
             editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
             break;
-        case 1: // メール設定
+        case 1: // 書式設定
             editSettingView.toTitle = self.dataSourceMail[self.selectedIndexPath.row];
             editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
             break;
@@ -215,7 +215,7 @@
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
     
     // KEY_UNSETTINGというキーでデフォルト値を配列に保持
-    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"テスト" ,@"サンプル" ,nil];
+    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"未設定" ,@"未設定" ,nil];
     [defaults setObject:array forKey:@"KEY_UNSETTING"];
     [ud registerDefaults:defaults];
 }
