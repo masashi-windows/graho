@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingViewController : UIViewController
+<<<<<<< HEAD
+=======
 
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 @end

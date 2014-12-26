@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  ConditionViewController.h
 //  Graho
 //
 //  Created by 須藤 将史 on 2014/12/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+@interface ConditionViewController : UIViewController
 
 @end
