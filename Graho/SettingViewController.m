@@ -38,13 +38,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     // デリゲートメソッドをこのクラスで実装する
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
     
     // テーブルに表示したいデータソースをセット
-    self.dataSourceWork = @[@"現場名"];
-    self.dataSourceMail = @[@"タイトル", @"書き出し文", @"署名"];
+    self.dataSourceWork = @[@"現場名", @"言語"];
+    self.dataSourceMail = @[@"件名", @"書き出し文", @"署名"];
     [self load];
 }
 
@@ -53,6 +54,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - UITableView DataSource
 
@@ -71,13 +73,14 @@
             title = [NSString stringWithFormat:@"現場設定"];
             break;
         case 1:
-            title = [NSString stringWithFormat:@"メール設定"];
+            title = [NSString stringWithFormat:@"書式設定"];
             break;
         default:
             break;
     }
     return title;
 }
+
 
 /**
  * テーブルに表示するデータ件数を返します。（必須）
@@ -102,6 +105,7 @@
     return dataCount;
 }
 
+
 /**
  * テーブルに表示するセクション（区切り）の件数を返します。（オプション）
  *
@@ -111,6 +115,7 @@
 {
     return 2;
 }
+
 
 /**
  * テーブルに表示するセルを返します。（必須）
@@ -174,6 +179,7 @@
     [self performSegueWithIdentifier:@"settingToEdit" sender:self];
 }
 
+
 #pragma mark - Segue method
 
 /**
@@ -187,13 +193,13 @@
     // 遷移先を取得します
     EditSettingViewController *editSettingView = segue.destinationViewController;
     
-    // 選択されたセルの行数を遷移先の「タイトル」「テキストフィールドのテキスト」に表示する。
+    // 選択されたセルの行数を遷移先の「件名」「テキストフィールドのテキスト」に表示する。
     switch (_selectedIndexPath.section) {
         case 0: // 現場設定
             editSettingView.toTitle = self.dataSourceWork[self.selectedIndexPath.row];
             editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
             break;
-        case 1: // メール設定
+        case 1: // 書式設定
             editSettingView.toTitle = self.dataSourceMail[self.selectedIndexPath.row];
             editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
             break;
@@ -215,20 +221,9 @@
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
     
     // KEY_UNSETTINGというキーでデフォルト値を配列に保持
-    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"テスト" ,@"サンプル" ,nil];
+    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"未設定" ,@"未設定" ,nil];
     [defaults setObject:array forKey:@"KEY_UNSETTING"];
     [ud registerDefaults:defaults];
 }
-
-
-#pragma mark - Navigation
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
