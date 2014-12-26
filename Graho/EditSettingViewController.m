@@ -41,7 +41,13 @@
 }
 
 
-// UITextFieldクラスのデリゲートメソッド
+/**
+ *  UITextFieldクラスのデリゲートメソッド
+ *
+ *  @param textField 設定入力のテキスト
+ *
+ *  @return 改行コード無し
+ */
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     // キーボードを引っ込める
@@ -55,7 +61,11 @@
 }
 
 
-// 保存ボタンの処理
+/**
+ *  保存ボタンの処理
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)saveButton:(id)sender {
     
     // アラートを作る
@@ -65,32 +75,27 @@
     [alert show];
 }
 
-// アラート処理（デリゲートメソッド）
+
+/**
+ *  アラート処理（デリゲートメソッド）
+ *
+ *  @param alertView   保存の確認アラート
+ *  @param buttonIndex 保存ボタン
+ */
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1){
-        //　OKが押されたら保存処理
+// TODO: OKが押されたら保存処理
 //        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
 //        [ud setObject:self.textField.text forKey:@"KEY_WPNAME"];  // をKEY_WPNAMEというキーの初期値は99
 //        [ud synchronize];  // NSUserDefaultsに即時反映させる（即時で無くてもよい場合は不要）
     }
 }
 
-//// データ保存
+//// TODO: データ保存処理
 //- (void)save
 //{
 //
 //}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -38,6 +38,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     // デリゲートメソッドをこのクラスで実装する
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
@@ -53,6 +54,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - UITableView DataSource
 
@@ -79,6 +81,7 @@
     return title;
 }
 
+
 /**
  * テーブルに表示するデータ件数を返します。（必須）
  *
@@ -102,6 +105,7 @@
     return dataCount;
 }
 
+
 /**
  * テーブルに表示するセクション（区切り）の件数を返します。（オプション）
  *
@@ -111,6 +115,7 @@
 {
     return 2;
 }
+
 
 /**
  * テーブルに表示するセルを返します。（必須）
@@ -174,6 +179,7 @@
     [self performSegueWithIdentifier:@"settingToEdit" sender:self];
 }
 
+
 #pragma mark - Segue method
 
 /**
@@ -219,16 +225,5 @@
     [defaults setObject:array forKey:@"KEY_UNSETTING"];
     [ud registerDefaults:defaults];
 }
-
-
-#pragma mark - Navigation
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
