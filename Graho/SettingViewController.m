@@ -7,8 +7,11 @@
 //
 
 #import "SettingViewController.h"
+<<<<<<< HEAD
 #import "EditSettingViewController.h"
 
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 
 @interface SettingViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -16,10 +19,13 @@
 
 @property (nonatomic, strong) NSArray *dataSourceWork;
 @property (nonatomic, strong) NSArray *dataSourceMail;
+<<<<<<< HEAD
 @property (nonatomic, strong) NSArray *settingValues;
 
 // 選択セルのインデックスを格納する変数
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 
 @end
 
@@ -38,15 +44,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+<<<<<<< HEAD
     
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
     // デリゲートメソッドをこのクラスで実装する
     self.settingTableView.delegate = self;
     self.settingTableView.dataSource = self;
     
     // テーブルに表示したいデータソースをセット
+<<<<<<< HEAD
     self.dataSourceWork = @[@"現場名", @"言語"];
     self.dataSourceMail = @[@"件名", @"書き出し文", @"署名"];
     [self load];
+=======
+    self.dataSourceWork = @[@"現場名"];
+    self.dataSourceMail = @[@"タイトル", @"書き出し文", @"署名"];
+
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +70,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 
 #pragma mark - UITableView DataSource
 
@@ -62,6 +78,14 @@
  * テーブルに表示するセクション名を返します。（オプション）
  *
  * @return NSString : セクション名
+=======
+#pragma mark - UITableView DataSource
+
+/**
+ テーブルに表示するセクション名を返します。（オプション）
+ 
+ @return NSString : セクション名
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -73,7 +97,11 @@
             title = [NSString stringWithFormat:@"現場設定"];
             break;
         case 1:
+<<<<<<< HEAD
             title = [NSString stringWithFormat:@"書式設定"];
+=======
+            title = [NSString stringWithFormat:@"メール設定"];
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
             break;
         default:
             break;
@@ -81,11 +109,18 @@
     return title;
 }
 
+<<<<<<< HEAD
 
 /**
  * テーブルに表示するデータ件数を返します。（必須）
  *
  * @return NSInteger : データ件数
+=======
+/**
+ テーブルに表示するデータ件数を返します。（必須）
+ 
+ @return NSInteger : データ件数
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -105,22 +140,36 @@
     return dataCount;
 }
 
+<<<<<<< HEAD
 
 /**
  * テーブルに表示するセクション（区切り）の件数を返します。（オプション）
  *
  * @return NSInteger : セクションの数
+=======
+/**
+ テーブルに表示するセクション（区切り）の件数を返します。（オプション）
+ 
+ @return NSInteger : セクションの数
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
  */
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
 }
 
+<<<<<<< HEAD
 
 /**
  * テーブルに表示するセルを返します。（必須）
  *
  * @return UITableViewCell : テーブルセル
+=======
+/**
+ テーブルに表示するセルを返します。（必須）
+ 
+ @return UITableViewCell : テーブルセル
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
  */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -128,6 +177,7 @@
     // 再利用できるセルがあれば再利用する
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+<<<<<<< HEAD
     // 右側にキャプションを追加する
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     
@@ -135,6 +185,8 @@
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     self.settingValues = [ud stringArrayForKey:@"KEY_UNSETTING"];
     
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
     if (!cell) {
         // 再利用できない場合は新規で作成
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -145,18 +197,24 @@
         case 0:
             cell.textLabel.text = self.dataSourceWork[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+<<<<<<< HEAD
             
             // セルの左側のキャプション
             cell.detailTextLabel.text = self.settingValues[indexPath.row];
             
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
             break;
         case 1:
             cell.textLabel.text = self.dataSourceMail[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+<<<<<<< HEAD
             
             // セルの左側のキャプション
             cell.detailTextLabel.text = self.settingValues[indexPath.row];
             
+=======
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
             break;
         default:
             break;
@@ -165,6 +223,7 @@
     return cell;
 }
 
+<<<<<<< HEAD
 /**
  * 選択されたセルのインデックスを取得
  * 設定項目を選択したら設定入力画面へ
@@ -225,5 +284,17 @@
     [defaults setObject:array forKey:@"KEY_UNSETTING"];
     [ud registerDefaults:defaults];
 }
+=======
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+>>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 
 @end

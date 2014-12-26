@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  ViewController.h
 //  Graho
 //
 //  Created by 須藤 将史 on 2014/12/14.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
-<<<<<<< HEAD
-=======
+@interface ViewController : UIViewController
 
->>>>>>> 81243a45745b447eb22607707f16a6c1c76f8539
 @end
