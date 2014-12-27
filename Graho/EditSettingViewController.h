@@ -10,8 +10,9 @@
 
 @interface EditSettingViewController : UIViewController<UITextFieldDelegate>
 
-// 設定入力画面のタイトルとテキストの受け渡し
+// 設定入力画面のタイトル、テキスト、選択されたセルのキー、を受け渡し
 @property (nonatomic, copy) NSString *toTitle;
 @property (nonatomic, copy) NSString *toText;
+@property (nonatomic, copy) NSString *selectedKey;
 
 @end
