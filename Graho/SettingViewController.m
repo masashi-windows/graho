@@ -15,7 +15,8 @@
 
 @property (nonatomic, strong) NSArray *dataSourceWork;
 @property (nonatomic, strong) NSArray *dataSourceMail;
-@property (nonatomic, strong) NSArray *settingValues;
+@property (nonatomic, strong) NSString *settingValue;
+@property (nonatomic, strong) NSString *unSetting;
 
 // 選択セルのインデックスを格納する変数
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
@@ -45,7 +46,21 @@
     // テーブルに表示したいデータソースをセット
     self.dataSourceWork = @[@"現場名", @"言語"];
     self.dataSourceMail = @[@"件名", @"書き出し文", @"署名"];
-    [self load];
+    self.unSetting = @"未設定";
+    NSLog(@"viewDidLoadスタート");
+}
+
+/**
+ *  設定画面が表示される都度呼び出される（設定値の読み込み）
+ *
+ *  @param animated 表示はプッシュ
+ */
+-(void)viewWillAppear:(BOOL)animated
+{
+    // TableViewを更新
+    [self.settingTableView reloadData];
+    [super viewWillAppear:animated];
+    NSLog(@"UItableViewの更新");
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,15 +139,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    
+    
     // 再利用できるセルがあれば再利用する
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     // 右側にキャプションを追加する
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     
+    
     // NSUserDefaultsを取得して利用
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    self.settingValues = [ud stringArrayForKey:@"KEY_UNSETTING"];
+    // キーと値の取得
+    NSString *defaultsKey = [[NSString alloc] initWithFormat:@"%d%d",indexPath.section, indexPath.row];
+    self.settingValue = [ud stringForKey:defaultsKey];
+    
     
     if (!cell) {
         // 再利用できない場合は新規で作成
@@ -144,17 +164,29 @@
         case 0:
             cell.textLabel.text = self.dataSourceWork[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+            // 空の場合は未設定
+            if (self.settingValue.length == 0){
+                self.settingValue = self.unSetting;
+            }
             
             // セルの左側のキャプション
-            cell.detailTextLabel.text = self.settingValues[indexPath.row];
+            cell.detailTextLabel.text = self.settingValue;
+            NSLog(@"%@%@", cell.detailTextLabel.text, defaultsKey);
             
             break;
         case 1:
             cell.textLabel.text = self.dataSourceMail[indexPath.row];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
+            // 空の場合は未設定
+            if (self.settingValue.length == 0){
+                self.settingValue = self.unSetting;
+            }
+            
             // セルの左側のキャプション
-            cell.detailTextLabel.text = self.settingValues[indexPath.row];
+            cell.detailTextLabel.text = self.settingValue;
+            NSLog(@"%@%@", cell.detailTextLabel.text, defaultsKey);
             
             break;
         default:
@@ -193,37 +225,42 @@
     // 遷移先を取得します
     EditSettingViewController *editSettingView = segue.destinationViewController;
     
+    // NSUserDefaultsを取得して利用
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    // キーと値の取得
+    NSString *defaultsKey = [[NSString alloc] initWithFormat:@"%d%d",self.selectedIndexPath.section, self.selectedIndexPath.row];
+    self.settingValue = [ud stringForKey:defaultsKey];
+    
+    // 遷移先にキーを渡す
+    editSettingView.selectedKey = defaultsKey;
+    
     // 選択されたセルの行数を遷移先の「件名」「テキストフィールドのテキスト」に表示する。
     switch (_selectedIndexPath.section) {
         case 0: // 現場設定
             editSettingView.toTitle = self.dataSourceWork[self.selectedIndexPath.row];
-            editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
+            
+            // 空の場合は未設定
+            if (self.settingValue.length == 0){
+                self.settingValue = self.unSetting;
+            }
+            
+            // 遷移先にタイトル名を渡す
+            editSettingView.toText = self.settingValue;
             break;
         case 1: // 書式設定
             editSettingView.toTitle = self.dataSourceMail[self.selectedIndexPath.row];
-            editSettingView.toText = self.settingValues[self.selectedIndexPath.row];
+            
+            // 空の場合は未設定
+            if (self.settingValue.length == 0){
+                self.settingValue = self.unSetting;
+            }
+            
+            // 遷移先にタイトル名を渡す
+            editSettingView.toText = self.settingValue;
             break;
         default:
             break;
     }
-}
-
-
-#pragma Table view delegate
-
-/**
- * 設定データ読み込み
- */
-- (void)load
-{
-    // デフォルト設定
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-    
-    // KEY_UNSETTINGというキーでデフォルト値を配列に保持
-    NSArray *array = [NSArray arrayWithObjects:@"未設定" ,@"未設定" ,@"未設定" ,nil];
-    [defaults setObject:array forKey:@"KEY_UNSETTING"];
-    [ud registerDefaults:defaults];
 }
 
 @end
