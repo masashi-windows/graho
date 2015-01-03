@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Week Reports View Controller - Menu-->
+        <!--Report View Controller - Menu-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Menu" id="vXZ-lx-hvc" customClass="WeekReportsViewController" sceneMemberID="viewController">
+                <viewController title="Menu" id="vXZ-lx-hvc" customClass="ReportViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -16,87 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="１週目" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZW3-u9-Gug">
-                                <rect key="frame" x="20" y="80" width="280" height="100"/>
-                                <color key="backgroundColor" red="0.28398668228141033" green="0.7818080357142857" blue="0.32301373900387342" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-uB-cbz">
                                 <rect key="frame" x="35" y="90" width="251" height="80"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveCreate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oxL-gs-JAj"/>
-                                    <segue destination="1sz-v7-Nfj" kind="push" id="J6E-LM-EnG"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="２週目" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sVr-un-u2p">
-                                <rect key="frame" x="20" y="188" width="280" height="100"/>
-                                <color key="backgroundColor" red="0.45268654339999997" green="0.45268654339999997" blue="0.45268654339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBc-IC-neo">
-                                <rect key="frame" x="35" y="198" width="251" height="80"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveCreate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zZZ-XH-Tqg"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="３週目" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHy-y3-PTQ">
-                                <rect key="frame" x="20" y="296" width="280" height="100"/>
-                                <color key="backgroundColor" red="0.45268654339999997" green="0.45268654339999997" blue="0.45268654339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyf-sy-j71">
-                                <rect key="frame" x="35" y="306" width="251" height="80"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveCreate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="toc-QR-0El"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="４週目" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLe-5K-9V3">
-                                <rect key="frame" x="20" y="404" width="280" height="100"/>
-                                <color key="backgroundColor" red="0.45268654339999997" green="0.45268654339999997" blue="0.45268654339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TV-po-MDO">
-                                <rect key="frame" x="35" y="414" width="251" height="80"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="moveCreate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WTb-2V-2xl"/>
+                                    <segue destination="1sz-v7-Nfj" kind="push" identifier="reportToEdit" id="J6E-LM-EnG"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTv-g3-mVY">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="選択" width="119" style="plain" id="ctW-sp-vgs">
-                                        <connections>
-                                            <action selector="selectWeekReport:" destination="vXZ-lx-hvc" id="lfv-qm-RCb"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="44" style="plain" systemItem="fixedSpace" id="eC6-Ku-BG2"/>
-                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr">
-                                        <connections>
-                                            <action selector="sendWeekReport:" destination="vXZ-lx-hvc" id="LZm-40-4if"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uJ0-1U-aUD"/>
+                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0W6-H5-YzE"/>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="POw-nl-ZKM">
+                                <rect key="frame" x="0.0" y="65" width="320" height="459"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xgN-nu-7nq">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgN-nu-7nq" id="tWy-EN-Fn0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="１２月" id="CGq-qe-xLC">
+                    <navigationItem key="navigationItem" title="title" id="CGq-qe-xLC">
                         <barButtonItem key="rightBarButtonItem" title="設定" id="vPr-P2-NR0">
                             <connections>
                                 <action selector="moveSetting:" destination="vXZ-lx-hvc" id="de6-fV-FkG"/>
@@ -105,22 +60,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="firstWeekReport" destination="ZW3-u9-Gug" id="zDg-MA-SQ7"/>
-                        <outlet property="forthWeekReport" destination="qLe-5K-9V3" id="QRv-m8-mL1"/>
                         <outlet property="menuToolBar" destination="VTv-g3-mVY" id="ibx-xy-xr8"/>
-                        <outlet property="secondWeekReport" destination="sVr-un-u2p" id="OyZ-N0-I7C"/>
+                        <outlet property="reportTableView" destination="POw-nl-ZKM" id="HHD-sa-bub"/>
                         <outlet property="settingButton" destination="vPr-P2-NR0" id="omR-6B-mYd"/>
-                        <outlet property="thirdWeekReport" destination="ZHy-y3-PTQ" id="2h1-J5-dWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1477" y="274"/>
         </scene>
-        <!--Task View Controller - Task-->
+        <!--Time View Controller - Time-->
         <scene sceneID="sVZ-Wp-EZN">
             <objects>
-                <viewController title="Task" id="n65-dp-xnE" customClass="TaskViewController" sceneMemberID="viewController">
+                <viewController title="Time" id="n65-dp-xnE" customClass="TimeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IPW-OZ-urP"/>
                         <viewControllerLayoutGuide type="bottom" id="0Uc-6L-rGE"/>
@@ -128,23 +80,9 @@
                     <view key="view" contentMode="scaleToFill" id="Yx6-pr-o54">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hne-oh-PPJ">
-                                <rect key="frame" x="9" y="77" width="302" height="29"/>
-                                <segments>
-                                    <segment title="月"/>
-                                    <segment title="火"/>
-                                    <segment title="水"/>
-                                    <segment title="木"/>
-                                    <segment title="金"/>
-                                    <segment title="土"/>
-                                    <segment title="日"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="業務内容" image="TaskBarButton" id="YJZ-CZ-Mz9"/>
+                    <tabBarItem key="tabBarItem" title="勤務時間" image="TimeBarButton" id="YJZ-CZ-Mz9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95h-1K-xZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,9 +103,9 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I05-ZI-yk5">
                                 <rect key="frame" x="11" y="77" width="299" height="29"/>
                                 <segments>
+                                    <segment title="勤務時間"/>
                                     <segment title="業務内容"/>
                                     <segment title="体調"/>
-                                    <segment title="勤務時間"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
@@ -179,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="-727" y="1169"/>
         </scene>
-        <!--Time View Controller - Time-->
+        <!--Condition View Controller - Condition-->
         <scene sceneID="mtu-tR-2EI">
             <objects>
-                <viewController title="Time" id="PWL-lR-GoU" customClass="TimeViewController" sceneMemberID="viewController">
+                <viewController title="Condition" id="PWL-lR-GoU" customClass="ConditionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6de-fx-Qlf"/>
                         <viewControllerLayoutGuide type="bottom" id="9gy-Al-2BT"/>
@@ -192,16 +130,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="勤務時間" image="TimeBarButton" id="pTF-kW-4mX"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="体調" image="ConditionBarButton" id="pTF-kW-4mX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAo-Qr-e4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-68" y="904"/>
         </scene>
-        <!--Condition View Controller - Condition-->
+        <!--Task View Controller - Task-->
         <scene sceneID="dkc-3k-0DT">
             <objects>
-                <viewController title="Condition" id="nPG-bN-bjg" customClass="ConditionViewController" sceneMemberID="viewController">
+                <viewController title="Task" id="nPG-bN-bjg" customClass="TaskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="izR-FW-dql"/>
                         <viewControllerLayoutGuide type="bottom" id="Bnj-LR-0Mw"/>
@@ -211,7 +149,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="体調" image="ConditionBarButton" id="bcz-1X-REb"/>
+                    <tabBarItem key="tabBarItem" title="業務内容" image="TaskBarButton" id="bcz-1X-REb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAV-XW-ssY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -341,12 +279,12 @@
             </objects>
             <point key="canvasLocation" x="-1085" y="-648"/>
         </scene>
-        <!--Tab Bar Controller - CreateTab-->
+        <!--Edit Report View Controller - CreateTab-->
         <scene sceneID="nm3-gc-UvA">
             <objects>
-                <tabBarController title="CreateTab" automaticallyAdjustsScrollViewInsets="NO" id="1sz-v7-Nfj" sceneMemberID="viewController">
+                <tabBarController title="CreateTab" automaticallyAdjustsScrollViewInsets="NO" id="1sz-v7-Nfj" customClass="EditReportViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="１週目" id="nik-M8-fxz">
+                    <navigationItem key="navigationItem" title="選択した日付" id="nik-M8-fxz">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="mTj-Dg-X5x"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
