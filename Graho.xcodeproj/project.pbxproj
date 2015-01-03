@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18347D451A584DB70065F4CA /* EditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18347D441A584DB70065F4CA /* EditReportViewController.m */; };
 		187438E31A488A9B00114315 /* EditSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187438E21A488A9B00114315 /* EditSettingViewController.m */; };
 		188E27F11A3D7CEB00DAE3FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F01A3D7CEB00DAE3FD /* Foundation.framework */; };
 		188E27F31A3D7CEB00DAE3FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F21A3D7CEB00DAE3FD /* CoreGraphics.framework */; };
@@ -15,7 +16,7 @@
 		188E27FD1A3D7CEB00DAE3FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E27FC1A3D7CEB00DAE3FD /* main.m */; };
 		188E28011A3D7CEB00DAE3FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E28001A3D7CEB00DAE3FD /* AppDelegate.m */; };
 		188E28041A3D7CEB00DAE3FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188E28021A3D7CEB00DAE3FD /* Main.storyboard */; };
-		188E28071A3D7CEB00DAE3FD /* WeekReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E28061A3D7CEB00DAE3FD /* WeekReportsViewController.m */; };
+		188E28071A3D7CEB00DAE3FD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E28061A3D7CEB00DAE3FD /* ReportViewController.m */; };
 		188E28091A3D7CEB00DAE3FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188E28081A3D7CEB00DAE3FD /* Images.xcassets */; };
 		188E28101A3D7CEB00DAE3FD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E280F1A3D7CEB00DAE3FD /* XCTest.framework */; };
 		188E28111A3D7CEB00DAE3FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188E27F01A3D7CEB00DAE3FD /* Foundation.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18347D431A584DB70065F4CA /* EditReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditReportViewController.h; sourceTree = "<group>"; };
+		18347D441A584DB70065F4CA /* EditReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditReportViewController.m; sourceTree = "<group>"; };
 		187438E11A488A9B00114315 /* EditSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSettingViewController.h; sourceTree = "<group>"; };
 		187438E21A488A9B00114315 /* EditSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSettingViewController.m; sourceTree = "<group>"; };
 		188E27ED1A3D7CEB00DAE3FD /* Graho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graho.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,8 +56,8 @@
 		188E27FF1A3D7CEB00DAE3FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		188E28001A3D7CEB00DAE3FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		188E28031A3D7CEB00DAE3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		188E28051A3D7CEB00DAE3FD /* WeekReportsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeekReportsViewController.h; sourceTree = "<group>"; };
-		188E28061A3D7CEB00DAE3FD /* WeekReportsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeekReportsViewController.m; sourceTree = "<group>"; };
+		188E28051A3D7CEB00DAE3FD /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		188E28061A3D7CEB00DAE3FD /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		188E28081A3D7CEB00DAE3FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		188E280E1A3D7CEB00DAE3FD /* GrahoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrahoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188E280F1A3D7CEB00DAE3FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -133,18 +136,20 @@
 				188E27FF1A3D7CEB00DAE3FD /* AppDelegate.h */,
 				188E28001A3D7CEB00DAE3FD /* AppDelegate.m */,
 				188E28021A3D7CEB00DAE3FD /* Main.storyboard */,
-				188E28051A3D7CEB00DAE3FD /* WeekReportsViewController.h */,
-				188E28061A3D7CEB00DAE3FD /* WeekReportsViewController.m */,
 				188E28251A3D942300DAE3FD /* SettingViewController.h */,
 				188E28261A3D942300DAE3FD /* SettingViewController.m */,
 				187438E11A488A9B00114315 /* EditSettingViewController.h */,
 				187438E21A488A9B00114315 /* EditSettingViewController.m */,
+				188E28051A3D7CEB00DAE3FD /* ReportViewController.h */,
+				188E28061A3D7CEB00DAE3FD /* ReportViewController.m */,
+				18347D431A584DB70065F4CA /* EditReportViewController.h */,
+				18347D441A584DB70065F4CA /* EditReportViewController.m */,
+				188E282E1A3D947C00DAE3FD /* TimeViewController.h */,
+				188E282F1A3D947C00DAE3FD /* TimeViewController.m */,
 				188E28281A3D945600DAE3FD /* TaskViewController.h */,
 				188E28291A3D945600DAE3FD /* TaskViewController.m */,
 				188E282B1A3D946C00DAE3FD /* ConditionViewController.h */,
 				188E282C1A3D946C00DAE3FD /* ConditionViewController.m */,
-				188E282E1A3D947C00DAE3FD /* TimeViewController.h */,
-				188E282F1A3D947C00DAE3FD /* TimeViewController.m */,
 				188E28311A3D948F00DAE3FD /* GraphViewController.h */,
 				188E28321A3D948F00DAE3FD /* GraphViewController.m */,
 				188E28081A3D7CEB00DAE3FD /* Images.xcassets */,
@@ -279,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188E28071A3D7CEB00DAE3FD /* WeekReportsViewController.m in Sources */,
+				188E28071A3D7CEB00DAE3FD /* ReportViewController.m in Sources */,
 				188E28331A3D948F00DAE3FD /* GraphViewController.m in Sources */,
 				188E28011A3D7CEB00DAE3FD /* AppDelegate.m in Sources */,
 				188E282D1A3D946C00DAE3FD /* ConditionViewController.m in Sources */,
@@ -287,6 +292,7 @@
 				188E27FD1A3D7CEB00DAE3FD /* main.m in Sources */,
 				188E28301A3D947C00DAE3FD /* TimeViewController.m in Sources */,
 				188E28271A3D942300DAE3FD /* SettingViewController.m in Sources */,
+				18347D451A584DB70065F4CA /* EditReportViewController.m in Sources */,
 				187438E31A488A9B00114315 /* EditSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

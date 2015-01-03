@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WeekReportsViewController : UIViewController
+@interface ReportViewController : UIViewController
 @end
 
