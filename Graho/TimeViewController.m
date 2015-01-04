@@ -38,6 +38,7 @@
                                    selector:@selector(workTimer)
                                    userInfo:nil
                                     repeats:YES];
+    // 現在時刻の更新へ
     [self workTimer];
 }
 
