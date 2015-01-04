@@ -228,7 +228,7 @@
     // NSUserDefaultsを取得して利用
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     // キーと値の取得
-    NSString *defaultsKey = [[NSString alloc] initWithFormat:@"%ld%ld",self.selectedIndexPath.section, self.selectedIndexPath.row];
+    NSString *defaultsKey = [[NSString alloc] initWithFormat:@"%ld%ld",(long)self.selectedIndexPath.section, (long)self.selectedIndexPath.row];
     self.settingValue = [ud stringForKey:defaultsKey];
     
     // 遷移先にキーを渡す

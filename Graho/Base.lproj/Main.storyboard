@@ -80,9 +80,68 @@
                     <view key="view" contentMode="scaleToFill" id="Yx6-pr-o54">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-6v-Y21">
+                                <rect key="frame" x="78" y="164" width="164" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-ad-Atc">
+                                <rect key="frame" x="50" y="359" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="出勤">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wStartButton:" destination="n65-dp-xnE" eventType="touchUpInside" id="GXQ-1e-Q2K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-dl-PSm">
+                                <rect key="frame" x="230" y="359" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="退勤">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wFinishButton:" destination="n65-dp-xnE" eventType="touchUpInside" id="eTj-Xb-ltx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-yv-ev7">
+                                <rect key="frame" x="140" y="354" width="40" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="休憩">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wRestButton:" destination="n65-dp-xnE" eventType="touchUpInside" id="zXm-Yj-Mb2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OVp-yv-ev7" secondAttribute="centerX" id="6m6-6a-vrz"/>
+                            <constraint firstItem="OVp-yv-ev7" firstAttribute="centerY" secondItem="yh3-ad-Atc" secondAttribute="centerY" id="DTE-mw-dtu"/>
+                            <constraint firstItem="eJ4-dl-PSm" firstAttribute="leading" secondItem="OVp-yv-ev7" secondAttribute="trailing" constant="50" id="F2b-ls-aVg"/>
+                            <constraint firstItem="ehc-6v-Y21" firstAttribute="top" secondItem="IPW-OZ-urP" secondAttribute="bottom" constant="100" id="VRM-tG-s1X"/>
+                            <constraint firstItem="OVp-yv-ev7" firstAttribute="leading" secondItem="yh3-ad-Atc" secondAttribute="trailing" constant="50" id="WCM-zU-S06"/>
+                            <constraint firstItem="0Uc-6L-rGE" firstAttribute="top" secondItem="OVp-yv-ev7" secondAttribute="bottom" constant="120" id="YTE-q2-G3E"/>
+                            <constraint firstItem="OVp-yv-ev7" firstAttribute="centerY" secondItem="eJ4-dl-PSm" secondAttribute="centerY" id="hlh-it-t2G"/>
+                            <constraint firstAttribute="centerX" secondItem="ehc-6v-Y21" secondAttribute="centerX" id="l2k-Vw-l3C"/>
+                            <constraint firstItem="OVp-yv-ev7" firstAttribute="top" secondItem="ehc-6v-Y21" secondAttribute="bottom" constant="130" id="zBK-Wm-Zzw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="勤務時間" image="TimeBarButton" id="YJZ-CZ-Mz9"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="ehc-6v-Y21" id="vDk-PC-fIx"/>
+                        <outlet property="wFinishButton" destination="eJ4-dl-PSm" id="ZSe-QK-Xcn"/>
+                        <outlet property="wRestButton" destination="OVp-yv-ev7" id="CuJ-BN-BMg"/>
+                        <outlet property="wStartButton" destination="yh3-ad-Atc" id="c9L-3H-ybs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95h-1K-xZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I05-ZI-yk5">
-                                <rect key="frame" x="11" y="77" width="299" height="29"/>
+                                <rect key="frame" x="10" y="74" width="300" height="29"/>
                                 <segments>
                                     <segment title="勤務時間"/>
                                     <segment title="業務内容"/>
@@ -244,20 +303,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ikv-Q0-Jhg">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="-48" y="-25" width="0.0" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="設定入力" id="ba3-vq-zaR"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X1j-Cq-xuv">
-                                <rect key="frame" x="20" y="101" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X1j-Cq-xuv">
+                                <rect key="frame" x="20" y="104" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-HT-iMh">
-                                <rect key="frame" x="110" y="161" width="100" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfW-HT-iMh">
+                                <rect key="frame" x="110" y="164" width="100" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="保存">
@@ -269,6 +328,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gfW-HT-iMh" firstAttribute="leading" secondItem="m1K-bU-u5L" secondAttribute="leading" constant="110" id="ADr-A8-lBf"/>
+                            <constraint firstItem="X1j-Cq-xuv" firstAttribute="top" secondItem="vfg-4h-Dze" secondAttribute="bottom" constant="40" id="FgV-aE-OEN"/>
+                            <constraint firstItem="X1j-Cq-xuv" firstAttribute="leading" secondItem="m1K-bU-u5L" secondAttribute="leading" constant="20" id="GRA-D4-Q6o"/>
+                            <constraint firstAttribute="trailing" secondItem="X1j-Cq-xuv" secondAttribute="trailing" constant="20" id="GcL-SX-E8u"/>
+                            <constraint firstAttribute="centerX" secondItem="gfW-HT-iMh" secondAttribute="centerX" id="Gt7-NT-q87"/>
+                            <constraint firstItem="gfW-HT-iMh" firstAttribute="top" secondItem="X1j-Cq-xuv" secondAttribute="bottom" constant="30" id="ViP-dO-1He"/>
+                            <constraint firstAttribute="trailing" secondItem="gfW-HT-iMh" secondAttribute="trailing" constant="110" id="k46-fX-pJf"/>
+                            <constraint firstAttribute="centerX" secondItem="X1j-Cq-xuv" secondAttribute="centerX" id="pv8-jI-WrL"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0cF-2v-nMw"/>
                     <connections>
@@ -284,9 +353,7 @@
             <objects>
                 <tabBarController title="CreateTab" automaticallyAdjustsScrollViewInsets="NO" id="1sz-v7-Nfj" customClass="EditReportViewController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="選択した日付" id="nik-M8-fxz">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="mTj-Dg-X5x"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="選択した日付" id="nik-M8-fxz"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="8Wt-eP-GwC">
                         <autoresizingMask key="autoresizingMask"/>
