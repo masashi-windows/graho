@@ -9,6 +9,10 @@
 #import "TimeViewController.h"
 
 @interface TimeViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *wStartButton;
+@property (weak, nonatomic) IBOutlet UIButton *wRestButton;
+@property (weak, nonatomic) IBOutlet UIButton *wFinishButton;
 
 @end
 
@@ -27,6 +31,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // 現在時刻を１秒ごとに表示
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(workTimer)
+                                   userInfo:nil
+                                    repeats:YES];
+    [self workTimer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +47,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/**
+ *  現在時刻の更新
+ */
+- (void)workTimer
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSDate *now = [NSDate date];
+    NSDateFormatter *nowformat = [[NSDateFormatter alloc] init];
+    [nowformat setDateFormat:@"HH:mm:ss"];
+    [nowformat setTimeZone:[NSTimeZone defaultTimeZone]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@", [nowformat stringFromDate:now]];
 }
-*/
+
+- (IBAction)wStartButton:(id)sender {
+}
+
+
+- (IBAction)wRestButton:(id)sender {
+}
+
+
+- (IBAction)wFinishButton:(id)sender {
+}
 
 @end
