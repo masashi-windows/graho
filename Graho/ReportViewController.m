@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *menuToolBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sendingButton;
 
 // 選択セルのインデックスを格納する変数
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
@@ -126,7 +127,43 @@
 }
 
 
+/**
+ *  設定画面への移動
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)moveSetting:(UIBarButtonItem *)sender {
+}
+
+
+/**
+ *　送信ボタンの処理（アクションシートで操作）
+ *
+ *  @param sender <#sender description#>
+ */
+- (IBAction)sendingButton:(id)sender {
+    
+    // アクションシートを生成および表示
+    UIActionSheet *sendActionSheet = [[UIActionSheet alloc] initWithTitle:@"送信書式の選択"
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"キャンセル"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"週報", @"月報", @"CSV（週報）", @"CSV（月報）", nil];
+    [sendActionSheet showInView:self.view];
+}
+
+
+/**
+ *  アクションシートのボタンを選択すると呼ばれる
+ *
+ *  @param actionSheet 送信書式のアクションシート
+ *  @param buttonIndex 書式スタイルの番号
+ */
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // 選んだボタンのindex番号とボタンタイトルを出力する(動作確認)
+    NSLog(@"index %ld %@", (long)buttonIndex, [actionSheet buttonTitleAtIndex:buttonIndex]);
+    
 }
 
 @end

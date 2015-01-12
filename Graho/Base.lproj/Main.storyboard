@@ -32,7 +32,11 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uJ0-1U-aUD"/>
-                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr"/>
+                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr">
+                                        <connections>
+                                            <action selector="sendingButton:" destination="vXZ-lx-hvc" id="4XN-lM-Rvz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0W6-H5-YzE"/>
                                 </items>
                             </toolbar>
@@ -74,6 +78,7 @@
                     <connections>
                         <outlet property="menuToolBar" destination="VTv-g3-mVY" id="ibx-xy-xr8"/>
                         <outlet property="reportTableView" destination="POw-nl-ZKM" id="HHD-sa-bub"/>
+                        <outlet property="sendingButton" destination="yjy-Jg-Jdr" id="9TE-e0-7sJ"/>
                         <outlet property="settingButton" destination="vPr-P2-NR0" id="omR-6B-mYd"/>
                     </connections>
                 </viewController>

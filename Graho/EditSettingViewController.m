@@ -80,7 +80,11 @@
 - (IBAction)saveButton:(id)sender {
     
     // アラートを作る
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"確認" message:@"設定を保存しました" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"確認"
+                                                   message:@"設定を保存しました"
+                                                  delegate:self
+                                         cancelButtonTitle:nil
+                                         otherButtonTitles:@"OK", nil];
     
     //アラートを表示する
     [alert show];
