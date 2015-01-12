@@ -40,6 +40,20 @@
                                     repeats:YES];
     // 現在時刻の更新へ
     [self workTimer];
+    
+    // ボタンのデザイン
+//    self.wStartButton.backgroundColor = [UIColor lightGrayColor];
+    self.wStartButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.wStartButton.layer.borderWidth = 1.0f;
+    self.wStartButton.layer.cornerRadius = 7.5f;
+    
+    self.wRestButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.wRestButton.layer.borderWidth = 1.0f;
+    self.wRestButton.layer.cornerRadius = 7.5f;
+    
+    self.wFinishButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.wFinishButton.layer.borderWidth = 1.0f;
+    self.wFinishButton.layer.cornerRadius = 7.5f;
 }
 
 - (void)didReceiveMemoryWarning
