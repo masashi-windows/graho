@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditSettingViewController : UIViewController<UITextFieldDelegate>
+@interface EditSettingViewController : UIViewController<UITextFieldDelegate, UIAlertViewDelegate>
 
 // 設定入力画面のタイトル、テキスト、選択されたセルのキー、を受け渡し
 @property (nonatomic, copy) NSString *toTitle;

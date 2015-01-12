@@ -32,7 +32,11 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uJ0-1U-aUD"/>
-                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr"/>
+                                    <barButtonItem title="送信" width="94" style="plain" id="yjy-Jg-Jdr">
+                                        <connections>
+                                            <action selector="sendingButton:" destination="vXZ-lx-hvc" id="4XN-lM-Rvz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0W6-H5-YzE"/>
                                 </items>
                             </toolbar>
@@ -74,6 +78,7 @@
                     <connections>
                         <outlet property="menuToolBar" destination="VTv-g3-mVY" id="ibx-xy-xr8"/>
                         <outlet property="reportTableView" destination="POw-nl-ZKM" id="HHD-sa-bub"/>
+                        <outlet property="sendingButton" destination="yjy-Jg-Jdr" id="9TE-e0-7sJ"/>
                         <outlet property="settingButton" destination="vPr-P2-NR0" id="omR-6B-mYd"/>
                     </connections>
                 </viewController>
@@ -93,14 +98,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-6v-Y21">
-                                <rect key="frame" x="79" y="164" width="163" height="14"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-6v-Y21">
+                                <rect key="frame" x="78" y="164" width="164" height="85"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-ad-Atc">
-                                <rect key="frame" x="50" y="362" width="40" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-ad-Atc">
+                                <rect key="frame" x="40" y="379" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Nh9-EL-Hjx"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ulz-ue-ahR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="出勤">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,8 +118,12 @@
                                     <action selector="wStartButton:" destination="n65-dp-xnE" eventType="touchUpInside" id="GXQ-1e-Q2K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-dl-PSm">
-                                <rect key="frame" x="230" y="362" width="40" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-dl-PSm">
+                                <rect key="frame" x="220" y="379" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5mh-XA-b49"/>
+                                    <constraint firstAttribute="height" constant="40" id="OlT-CJ-48m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="退勤">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,8 +132,12 @@
                                     <action selector="wFinishButton:" destination="n65-dp-xnE" eventType="touchUpInside" id="eTj-Xb-ltx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-yv-ev7">
-                                <rect key="frame" x="140" y="373" width="40" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-yv-ev7">
+                                <rect key="frame" x="130" y="379" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Ma3-q4-Wlb"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZYQ-DB-7aU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="休憩">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,9 +151,9 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OVp-yv-ev7" secondAttribute="centerX" id="6m6-6a-vrz"/>
                             <constraint firstItem="OVp-yv-ev7" firstAttribute="centerY" secondItem="yh3-ad-Atc" secondAttribute="centerY" id="DTE-mw-dtu"/>
-                            <constraint firstItem="eJ4-dl-PSm" firstAttribute="leading" secondItem="OVp-yv-ev7" secondAttribute="trailing" constant="50" id="F2b-ls-aVg"/>
+                            <constraint firstItem="eJ4-dl-PSm" firstAttribute="leading" secondItem="OVp-yv-ev7" secondAttribute="trailing" constant="30" id="F2b-ls-aVg"/>
                             <constraint firstItem="ehc-6v-Y21" firstAttribute="top" secondItem="IPW-OZ-urP" secondAttribute="bottom" constant="100" id="VRM-tG-s1X"/>
-                            <constraint firstItem="OVp-yv-ev7" firstAttribute="leading" secondItem="yh3-ad-Atc" secondAttribute="trailing" constant="50" id="WCM-zU-S06"/>
+                            <constraint firstItem="OVp-yv-ev7" firstAttribute="leading" secondItem="yh3-ad-Atc" secondAttribute="trailing" constant="30" id="WCM-zU-S06"/>
                             <constraint firstItem="0Uc-6L-rGE" firstAttribute="top" secondItem="OVp-yv-ev7" secondAttribute="bottom" constant="100" id="YTE-q2-G3E"/>
                             <constraint firstItem="OVp-yv-ev7" firstAttribute="centerY" secondItem="eJ4-dl-PSm" secondAttribute="centerY" id="hlh-it-t2G"/>
                             <constraint firstAttribute="centerX" secondItem="ehc-6v-Y21" secondAttribute="centerX" id="l2k-Vw-l3C"/>
