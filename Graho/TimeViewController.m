@@ -13,17 +13,15 @@
 // 現在時刻ラベル
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-// 出勤・退勤・勤務時間ラベル
+// 出勤・休憩・退勤・勤務時間ラベル
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resetTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *finishTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *workTimeLabel;
 
 // ボタンエリア
 @property (weak, nonatomic) IBOutlet UIButton *wStartButton;
-@property (weak, nonatomic) IBOutlet UIButton *wRestButton;
 @property (weak, nonatomic) IBOutlet UIButton *wFinishButton;
-
-
 
 @end
 
@@ -57,11 +55,7 @@
     self.wStartButton.layer.borderColor = [UIColor grayColor].CGColor;
     self.wStartButton.layer.borderWidth = 1.0f;
     self.wStartButton.layer.cornerRadius = 7.5f;
-    
-    self.wRestButton.layer.borderColor = [UIColor grayColor].CGColor;
-    self.wRestButton.layer.borderWidth = 1.0f;
-    self.wRestButton.layer.cornerRadius = 7.5f;
-    
+
     self.wFinishButton.layer.borderColor = [UIColor grayColor].CGColor;
     self.wFinishButton.layer.borderWidth = 1.0f;
     self.wFinishButton.layer.cornerRadius = 7.5f;
@@ -102,22 +96,6 @@
     [wStartAlert show];
 }
 
-/**
- *  休憩ボタン処理
- *
- *  @param sender <#sender description#>
- */
-- (IBAction)wRestButton:(id)sender {
-    // アラートを作る
-    UIAlertView *wResetAlert = [[UIAlertView alloc]initWithTitle:@"確認"
-                                                   message:@"休憩しますか？"
-                                                  delegate:self
-                                         cancelButtonTitle:@"キャンセル"
-                                         otherButtonTitles:@"OK", nil];
-    
-    //アラートを表示する
-    [wResetAlert show];
-}
 
 /**
  *  退勤ボタン処理
