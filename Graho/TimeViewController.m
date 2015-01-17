@@ -9,10 +9,21 @@
 #import "TimeViewController.h"
 
 @interface TimeViewController ()
+
+// 現在時刻ラベル
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+// 出勤・退勤・勤務時間ラベル
+@property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finishTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *workTimeLabel;
+
+// ボタンエリア
 @property (weak, nonatomic) IBOutlet UIButton *wStartButton;
 @property (weak, nonatomic) IBOutlet UIButton *wRestButton;
 @property (weak, nonatomic) IBOutlet UIButton *wFinishButton;
+
+
 
 @end
 
@@ -74,15 +85,55 @@
     self.timeLabel.text = [NSString stringWithFormat:@"%@", [nowformat stringFromDate:now]];
 }
 
+/**
+ *  出勤ボタン処理
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)wStartButton:(id)sender {
+    // アラートを作る
+    UIAlertView *wStartAlert = [[UIAlertView alloc]initWithTitle:@"確認"
+                                                   message:@"出勤しますか？"
+                                                  delegate:self
+                                         cancelButtonTitle:@"キャンセル"
+                                         otherButtonTitles:@"OK", nil];
+    
+    //アラートを表示する
+    [wStartAlert show];
 }
 
-
+/**
+ *  休憩ボタン処理
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)wRestButton:(id)sender {
+    // アラートを作る
+    UIAlertView *wResetAlert = [[UIAlertView alloc]initWithTitle:@"確認"
+                                                   message:@"休憩しますか？"
+                                                  delegate:self
+                                         cancelButtonTitle:@"キャンセル"
+                                         otherButtonTitles:@"OK", nil];
+    
+    //アラートを表示する
+    [wResetAlert show];
 }
 
-
+/**
+ *  退勤ボタン処理
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)wFinishButton:(id)sender {
+    // アラートを作る
+    UIAlertView *wFinishAlert = [[UIAlertView alloc]initWithTitle:@"確認"
+                                                   message:@"退勤しますか？"
+                                                  delegate:self
+                                         cancelButtonTitle:@"キャンセル"
+                                         otherButtonTitles:@"OK", nil];
+    
+    //アラートを表示する
+    [wFinishAlert show];
 }
 
 @end
