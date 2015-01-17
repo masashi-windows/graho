@@ -70,7 +70,7 @@
 }
 
 
-#pragma mark - UITableView DataSource
+#pragma mark - UITableViewDataSource
 
 /**
  * テーブルに表示するセクション名を返します。（オプション）
