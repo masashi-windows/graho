@@ -75,7 +75,7 @@
     // 休憩時間テキストフィールドのデザイン
     self.resetTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.resetTextField.textColor = [UIColor blueColor];
-    self.resetTextField.placeholder = @"未設定";
+    self.resetTextField.placeholder = @"未選択";
     self.resetTextField.delegate = self;
     
     
@@ -237,7 +237,7 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     switch (component) {
-        case 0: return 9;
+        case 0: return 5;
         case 1: return [self.minutesArray count];
     }
     return 0;
