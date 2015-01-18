@@ -4,7 +4,7 @@ Graho
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/masashi-sutou/graho?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **This iOS App is in development.**
-**Please waite a second.**
+**Please wait a second.**
 
 The Graho is an iOS App. It is a support tool for making weekly reports.
 
